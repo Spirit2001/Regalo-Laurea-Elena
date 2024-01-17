@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esperienza Unica</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #111; /* Sfondo scuro opaco */
+      color: #ff9900; /* Colore arancione fluo */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #222;
+      color: #ff9900;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      margin: 20px;
+      text-align: center;
+    }
+
+    p {
+      color: #ff9900;
+      font-size: 18px; /* Dimensione testo aumentata */
+    }
+
+    input, textarea {
+      width: 80%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ff9900;
+      border-radius: 4px;
+      color: #ff9900;
+      background-color: #333;
+    }
+
+    button {
+      background-color: #ff9900;
+      color: #000;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e68a00; /* Colore arancione più scuro al passaggio del mouse */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Benvenuta! Se sei qui significa che è andato tutto bene!</h1>
+  </header>
+  <section>
+    <p>Ma aspetta... Siamo sicuri che sei veramente tu?</p>
+    <input type="text" id="nome" placeholder="Inserisci qui il tuo nome">
+    <button onclick="controllaNome()">Invia</button>
+    <div id="rispostaNegativa" style="display: none;">
+      <img src="C:\Users\simon\Desktop\Html\MrBeanSorpreso.gif" alt="Persona che scuote la testa">
+      <p>Ma no!! Non sai nemmeno il tuo nome!! Riprova con "Elena"</p>
+    </div>
+    <div id="rispostaPositiva" style="display: none;">
+      <img src="C:\Users\simon\Desktop\Html\MrBeanCorretto.gif" alt="Persona felice">
+      <p>Corretto!!!</p>
+    </div>
+    <div id="regalo" style="display: none;">
+      <p>Allora, il tuo regalo è....</p>
+    </div>
+
+  </section>
+  <section>
+    <h2>Congratulazioni!! Ti sei laureata!!</h2>
+  </section>
+  <footer></footer>
+
+  <script>
+    function controllaNome() {
+      var nomeInserito = document.getElementById('nome').value;
+      if (nomeInserito.toLowerCase() === 'elena') {
+        document.getElementById('rispostaPositiva').style.display = 'block';
+        setTimeout(function () {
+          document.getElementById('rispostaPositiva').style.display = 'none';
+          document.getElementById('regalo').style.display = 'block';
+          setTimeout(function () {
+            document.body.style.backgroundColor = '#111'; /* Cambia il colore di sfondo */
+            document.body.innerHTML = '<h1 style="color:#ff9900;text-align: center;">Allora, il tuo regalo è....</h1>';
+            setTimeout(function () {
+              document.body.innerHTML = '<h1 style="color:#ff9900;text-align: center;">Un viaggio a Torino completamente gratuito a mangiare i gamberetti!!!</h1>';
+              // Insert the image of Torino
+              document.body.innerHTML += '<img src="C:\\Users\\simon\\Desktop\\Html\\Torino.jpeg" alt="Torino"style="max-width: 100%; height: auto; max-height: 300px;">';
+              setTimeout(function () {
+                document.body.innerHTML = '<h1 style="color:#ff9900;text-align: center;">Ma non un viaggio normale a Torino, perché mamma e papà di Simone hanno regalato l\'hotel!!</h1>';
+                // Insert the image of the hotel
+                document.body.innerHTML += '<img src="C:\\Users\\simon\\Desktop\\Html\\Spa.png" alt="Hotel">';
+                document.body.innerHTML += '<p>E che hotel!! Ha addirittura la SPA!!</p>';
+                setTimeout(function () {
+                  document.body.innerHTML = ''; // Rimuove tutto dallo schermo
+                  document.body.innerHTML = '<div id="gifFinale" style="display: none;">';
+                  document.body.innerHTML += '<p style="color:#ff9900;text-align: center; font-size: 28px; margin-bottom: 10px;">Crazy regalooo!!</p>';
+                  document.body.innerHTML += '<img src="C:\\Users\\simon\\Desktop\\Html\\Ballo.gif" alt="Gif Finale" style="max-width: 100%; height: auto; max-height: 300px;">';
+                  document.body.innerHTML += '</div>';
+                  document.getElementById('gifFinale').style.display = 'block';
+                }, 5000)
+              }, 5000);
+            }, 5000);
+          });
+        }, 5000);
+      } else {
+        document.getElementById('rispostaNegativa').style.display = 'block';
+        setTimeout(function () {
+          document.getElementById('rispostaNegativa').style.display = 'none';
+          document.getElementById('nome').value = '';
+          document.getElementById('rispostaPositiva').style.display = 'none';
+          document.getElementById('regalo').style.display = 'none';
+        }, 3000);
+      }
+    }
+  </script>
+</body>
+</html>
