@@ -70,11 +70,11 @@
     <input type="text" id="nome" placeholder="Inserisci qui il tuo nome">
     <button onclick="controllaNome()">Invia</button>
     <div id="rispostaNegativa" style="display: none;">
-      <img src=".\Html\MrBeanSorpreso.gif" alt="Persona che scuote la testa">
+      <img src="Regalo-Laurea-Elena\Html\MrBeanSorpreso.gif" alt="Persona che scuote la testa">
       <p>Ma no!! Non sai nemmeno il tuo nome!! Riprova con "Elena"</p>
     </div>
     <div id="rispostaPositiva" style="display: none;">
-      <img src=".\Html\MrBeanCorretto.gif" alt="Persona felice">
+      <img src="Regalo-Laurea-Elena\Html\MrBeanCorretto.gif" alt="Persona felice">
       <p>Corretto!!!</p>
     </div>
     <div id="regalo" style="display: none;">
@@ -101,17 +101,17 @@
             setTimeout(function () {
               document.body.innerHTML = '<h1 style="color:#ff9900;text-align: center;">Un viaggio a Torino completamente gratuito a mangiare i gamberetti!!!</h1>';
               // Insert the image of Torino
-              document.body.innerHTML += '<img src=".\\Torino.jpeg" alt="Torino"style="max-width: 100%; height: auto; max-height: 300px;">';
+              document.body.innerHTML += '<img src="Regalo-Laurea-Elena\\Torino.jpeg" alt="Torino"style="max-width: 100%; height: auto; max-height: 300px;">';
               setTimeout(function () {
                 document.body.innerHTML = '<h1 style="color:#ff9900;text-align: center;">Ma non un viaggio normale a Torino, perché mamma e papà di Simone hanno regalato l\'hotel!!</h1>';
                 // Insert the image of the hotel
-                document.body.innerHTML += '<img src=".\\Html\\Spa.png" alt="Hotel">';
+                document.body.innerHTML += '<img src="Regalo-Laurea-Elena\\Html\\Spa.png" alt="Hotel">';
                 document.body.innerHTML += '<p>E che hotel!! Ha addirittura la SPA!!</p>';
                 setTimeout(function () {
                   document.body.innerHTML = ''; // Rimuove tutto dallo schermo
                   document.body.innerHTML = '<div id="gifFinale" style="display: none;">';
                   document.body.innerHTML += '<p style="color:#ff9900;text-align: center; font-size: 28px; margin-bottom: 10px;">Crazy regalooo!!</p>';
-                  document.body.innerHTML += '<img src=".\\Html\\Ballo.gif" alt="Gif Finale" style="max-width: 100%; height: auto; max-height: 300px;">';
+                  document.body.innerHTML += '<img src="Regalo-Laurea-Elena\\Html\\Ballo.gif" alt="Gif Finale" style="max-width: 100%; height: auto; max-height: 300px;">';
                   document.body.innerHTML += '</div>';
                   document.getElementById('gifFinale').style.display = 'block';
                 }, 5000)
