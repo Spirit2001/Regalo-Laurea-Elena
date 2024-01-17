@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #000;
+      background-color: #111; /* Sfondo scuro opaco */
       color: #ff9900; /* Colore arancione fluo */
       margin: 0;
       padding: 0;
@@ -32,6 +32,7 @@
 
     p {
       color: #ff9900;
+      font-size: 18px; /* Dimensione testo aumentata */
     }
 
     input, textarea {
@@ -95,20 +96,28 @@
           document.getElementById('rispostaPositiva').style.display = 'none';
           document.getElementById('regalo').style.display = 'block';
           setTimeout(function () {
-            document.body.style.backgroundColor = '#000';
-            document.body.innerHTML = '<h1 style="color:#ff9900;">Allora, il tuo regalo è....</h1>';
+            document.body.style.backgroundColor = '#111'; /* Cambia il colore di sfondo */
+            document.body.innerHTML = '<h1 style="color:#ff9900;text-align: center;">Allora, il tuo regalo è....</h1>';
             setTimeout(function () {
-              document.body.innerHTML = '<h1 style="color:#ff9900;">Un viaggio a Torino completamente gratuito a mangiare i gamberetti!!!</h1>';
+              document.body.innerHTML = '<h1 style="color:#ff9900;text-align: center;">Un viaggio a Torino completamente gratuito a mangiare i gamberetti!!!</h1>';
               // Insert the image of Torino
-              document.body.innerHTML += '<img src="C:\Users\simon\Desktop\Html\Torino.jpeg" alt="Torino">';
+              document.body.innerHTML += '<img src=".\\Torino.jpeg" alt="Torino"style="max-width: 100%; height: auto; max-height: 300px;">';
               setTimeout(function () {
-                document.body.innerHTML = '<h1 style="color:#ff9900;">Ma non un viaggio normale a Torino, perché mamma e papà di Simone hanno regalato l\'hotel!!</h1>';
+                document.body.innerHTML = '<h1 style="color:#ff9900;text-align: center;">Ma non un viaggio normale a Torino, perché mamma e papà di Simone hanno regalato l\'hotel!!</h1>';
                 // Insert the image of the hotel
-                document.body.innerHTML += 'img src=<C:\Users\simon\Desktop\Html\Spa.png" alt="Hotel">';
+                document.body.innerHTML += '<img src=".\\Html\\Spa.png" alt="Hotel">';
                 document.body.innerHTML += '<p>E che hotel!! Ha addirittura la SPA!!</p>';
+                setTimeout(function () {
+                  document.body.innerHTML = ''; // Rimuove tutto dallo schermo
+                  document.body.innerHTML = '<div id="gifFinale" style="display: none;">';
+                  document.body.innerHTML += '<p style="color:#ff9900;text-align: center; font-size: 28px; margin-bottom: 10px;">Crazy regalooo!!</p>';
+                  document.body.innerHTML += '<img src=".\\Html\\Ballo.gif" alt="Gif Finale" style="max-width: 100%; height: auto; max-height: 300px;">';
+                  document.body.innerHTML += '</div>';
+                  document.getElementById('gifFinale').style.display = 'block';
+                }, 5000)
               }, 5000);
             }, 5000);
-          }, 5000);
+          });
         }, 5000);
       } else {
         document.getElementById('rispostaNegativa').style.display = 'block';
